@@ -18,6 +18,7 @@
         rel="stylesheet">
 
     <!-- Custom styles for this template-->
+    <link href="css/styleScroll.css" rel="stylesheet">
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
 
 </head>
@@ -67,8 +68,11 @@
                     <div class="bg-white py-2 collapse-inner rounded">
                         <div class="collapse-divider"></div>
                         <h6 class="collapse-header">Proyect Pages:</h6>
-                        <a class="collapse-item" href="blank.html">Blank Page</a>
+                        <a class="collapse-item" href="brickGame.html">Brick Game</a>
+                        <a class="collapse-item" href="calculator.html">Calculator Page</a>
                         <a class="collapse-item" href="countdown.html">Countdown</a>
+                        <a class="collapse-item" href="scroll.html">Infinit Scroll</a>
+                        <a class="collapse-item" href="speech.html">Speech Recognition</a>
                     </div>
                 </div>
             </li>
@@ -287,16 +291,18 @@
                 <!-- End of Topbar -->
 
                 <!-- Begin Page Content -->
-                <div class="container-fluid">
+                <div class="container">
 
                     <!-- Page Heading -->
-                    <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
-                        <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
-                                class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
+                    <div class="flex-column text-center">
+                        <h1 class="h3 mb-0 text-gray-800">Infinite Scroll</h1>
+                        
+                        <div class="box a"></div>
+                        <div class="box a"></div>
+                        <div class="box a"></div>
                     </div>
+                    <div class="spinner"></div>
 
-                    
             <!-- End of Main Content -->
 
             <!-- Footer -->
@@ -356,6 +362,9 @@
     <!-- Page level custom scripts -->
     <script src="js/demo/chart-area-demo.js"></script>
     <script src="js/demo/chart-pie-demo.js"></script>
+
+    <!-- Page Brick custom scripts -->
+    <script src="js/scroll.js"></script>
 
 </body>
 

@@ -481,10 +481,26 @@ mark,
   height: auto;
 }
 
+canvas {
+  background: #3d75aa;
+  background: -webkit-linear-gradient(#45be78, #66578a);
+  background-color: rgb(145, 190, 163);
+  display: block;
+  margin: 0 auto;
+}
+
+#number {
+  padding: 60px;
+  margin: 50px;
+  box-shadow: 0px 0px 20px #aaa;
+  background-color: #113b42;
+  font-size: 100px;
+}
+
 .img-thumbnail {
   padding: 0.25rem;
   background-color: #fff;
-  border: 1px solid #dddfeb;
+  border: 1px solid #dde7dc;
   border-radius: 0.35rem;
   max-width: 100%;
   height: auto;
