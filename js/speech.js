@@ -1,4 +1,4 @@
-var rec;
+let rec;
     if(!("webkitSpeechRecognition" in window)) {
         alert("Sorry, you don't use custom API");
     } else {

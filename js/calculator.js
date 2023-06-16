@@ -5,11 +5,11 @@ Number() + Number
 */
 // You need to add the salary per hour and the hours per month to get the gross salary
 
-var salaryPerHour = document.getElementById('txt_salary');
-var hoursPerMonth = document.getElementById('txt_month');
-var basicSalaryPerMonth = document.getElementById('txt_basic');
-var Salary = document.getElementById('txt_gross'); // result
-var CalcButton = document.getElementById('calc');
+let salaryPerHour = document.getElementById('txt_salary');
+let hoursPerMonth = document.getElementById('txt_month');
+let basicSalaryPerMonth = document.getElementById('txt_basic');
+let Salary = document.getElementById('txt_gross'); // result
+let CalcButton = document.getElementById('calc');
 
 
 CalcButton.addEventListener('click',DoCalculation)
@@ -28,8 +28,8 @@ Changing
 Number() to Number
 
 */
-var basicSalary = Number(hoursPerMonth.value) * Number(salaryPerHour.value);
-var SalarywithTax = basicSalary * 21/100;
+let basicSalary = Number(hoursPerMonth.value) * Number(salaryPerHour.value);
+let SalarywithTax = basicSalary * 21/100;
 basicSalaryPerMonth.value=basicSalary;
 Salary.value= basicSalary - SalarywithTax;
 console.log(SalarywithTax);
