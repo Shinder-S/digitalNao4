@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Save document</title>
+</head>
+<body>
+        
+    <form action="{{ url_for('search') }}" method="post">
+        <p><label>File name</label><input name="saveName" type="text">
+        <input type="submit" value="show"></p>
+    </form>   
+
+    <script src=" {{ url_for('js', filename='save.js') }}"></script>
+</body>
+</html>

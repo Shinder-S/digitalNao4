@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search </title>
+</head>
+<body>
+    <p><h3> {{ filename }} </h3></p>
+            <canvas hidden id="paint" width="500" height="400" style="border: 5px solid #000000;"></canvas>
+            <button id="show" onclick="view('{{ file[3] }}')">View</button></p>
+        {% endif %}
+    {% endfor %}
+{% endif %}
+    
+<script src=" {{ url_for('js', filename='search.js') }}"></script>
+</body>
+</html>
