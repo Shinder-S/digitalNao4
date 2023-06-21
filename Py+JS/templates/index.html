@@ -7,21 +7,10 @@
   <div class="row">
     <div class="col-lg-3 col-md-6 toolbar" id="toolbar">
       <!-- column #1 -->
-      <div id="colorTools">
-        <label>Brush Color:</label>
-        <input type="color" id="colorPicker">
-      </div>
       <div id="brushSize">
-        <label>Brush Size:</label>
-        <br>
-        <input type="range" id="brushSizePicker" min="1" max="40" value="5">
-      </div>
-      <div id="imageTools">
-
-      </div>
-      <div id="backgroundColorTools">
-        <label>Background color:</label>
-        <input type="color" id="backgroundColorPicker">
+        <label>Line Width</label>
+        <button id="pixel_plus" class="btn btn-secondary" type="button" onclick="add_pixel()">+</button>
+        <button id="pixel_minus" class="btn btn-secondary" type="button" onclick="reduce_pixel()">-</button>
       </div>
     </div>
     <div class="col-lg-6 col-md-12 h-100 d-flex align-items-center justify-content-center">
@@ -35,11 +24,8 @@
           <button id="circletool" type="button" class="btn btn-primary" onclick="circle()">Circle</button> 
           <button id="erasertool" type="button" class="btn btn-primary" onclick="eraser()">Eraser</button> 
           <button id="saveBtn" class="btn btn-success" onclick="save()">Save Capture</button>
-          <button id="clearBtn" class="btn btn-primary">Clear</button>
-          <button id="restoreBtn" class="btn btn-danger">Restore</button>
+          <button id="clearBtn" class="btn btn-primary" onclick="reset()">Clear</button>
         </div>
-        <label id="imagePicker" for="imagePicker">Background image:</label>
-        <input type="file" id="imagePicker" class="form-label">
       </div>
     </div>
   </div>

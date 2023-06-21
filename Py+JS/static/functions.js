@@ -15,9 +15,13 @@ function color(color_value){
     ctx.fillStyle = color_value;
 }
 
-// Función para cambiar el tamaño del pincel
-function changeBrushSize() {
-    ctx.lineWidth = this.value;
+//Function to change the background color of the canvas
+function changeBackgroundColor() {
+    canvas.color.backgroundColor = this.value;
+}
+
+function add_pixel(){
+    ctx.lineWidth += 1;
 }
 
 //Reduce pixel
@@ -224,7 +228,7 @@ function eraser(){
     }    
 }
 
-// Function to save a snapshot of the canvas
+//Function to save a snapshot of the canvas
 function save() {
     const link = document.createElement('a');
     link.href = canvas.toDataURL(); // Get URL canvas image
@@ -232,7 +236,7 @@ function save() {
     link.click();
 }
 
-// Función para cambiar la imagen de fondo
+//Function to change the background image
 function changeBackgroundImage() {
     const file = this.files[0];
     const reader = new FileReader();
@@ -246,3 +250,9 @@ function changeBackgroundImage() {
     };
     reader.readAsDataURL(file);
 }
+
+colorPicker.addEventListener('input', changeColor);
+imagePicker.addEventListener('change', changeBackgroundImage);
+brushSizePicker.addEventListener('input', changeBrushSize);
+backgroundColorPicker.addEventListener('input', changeBackgroundColor);
+saveBtn.addEventListener('click', save);

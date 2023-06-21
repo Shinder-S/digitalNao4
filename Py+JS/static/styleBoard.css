@@ -1,13 +1,13 @@
 #paint {
-    border: 1px solid rgb(83, 25, 43);
+    border: 5px solid rgb(0, 0, 0);
     cursor: crosshair;
     margin: 15px;
   }
 
 body {
 font-family: roboto, Arial, sans-serif !important;
-background-color: #3a2058 !important;
-color: rgb(253, 253, 253) !important;
+background-color: #205829 !important;
+color: rgb(0, 0, 0) !important;
 width: 100%;
 display: flex;
 flex-direction: column;
@@ -35,8 +35,7 @@ align-items:flex-start;
 margin-top: 2% !important;
 }
 
-#colorTools, #brushSizeTools, #imageTools,
-#backgroundColorTools {
+#colorTools, #brushSizeTools, #imageTools {
 margin-bottom: 10px;
 }
 
