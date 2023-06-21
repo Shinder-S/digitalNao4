@@ -15,9 +15,9 @@ function color(color_value){
     ctx.fillStyle = color_value;
 }
 
-//Add more pixel
-function add_pixel(){
-    ctx.lineWidth += 1;
+// Función para cambiar el tamaño del pincel
+function changeBrushSize() {
+    ctx.lineWidth = this.value;
 }
 
 //Reduce pixel
@@ -47,7 +47,7 @@ function reset(){
 // Pencil tool
 function pencil (){
 
-        canvas.onmousedown = function (e){
+    canvas.onmousedown = function (e){
         curX = e.clientX - canvas.offsetLeft;
         curY = e.clientY - canvas.offsetTop;
         hold = true;
@@ -222,13 +222,27 @@ function eraser(){
         ctx.stroke();
         canvas_data.pencil.push({ "startx": prevX, "starty": prevY, "endx": curX, "endy": curY, "thick": ctx.lineWidth, "color": ctx.strokeStyle });
     }    
-}  
+}
 
-function save(){
-    var filename = document.getElementById("saveName").value;
-    var data = JSON.stringify(canvas_data);
-    var image = canvas.toDataURL();
-    
-    $.post("/", { save_fname: filename, save_cdata: data, save_image: image });
-    alert(filename + " saved");
-} 
+// Function to save a snapshot of the canvas
+function save() {
+    const link = document.createElement('a');
+    link.href = canvas.toDataURL(); // Get URL canvas image
+    link.download = 'canvas.png'; 
+    link.click();
+}
+
+// Función para cambiar la imagen de fondo
+function changeBackgroundImage() {
+    const file = this.files[0];
+    const reader = new FileReader();
+    reader.onload = function (e) {
+        backgroundImage = new Image();
+        backgroundImage.onload = function () {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        ctx.drawImage(backgroundImage, 0, 0, canvas.width, canvas.height);
+        };
+        backgroundImage.src = e.target.result;
+    };
+    reader.readAsDataURL(file);
+}
