@@ -5,15 +5,15 @@ let height = canvas.height;
 let curX, curY, prevX, prevY;
 let hold = false;
 ctx.lineWidth = 2;
+let currentColor = '#fff';
 let fill_value = true;
 let stroke_value = false;
 let canvas_data = {"pencil": [], "line": [], "rectangle": [], "circle": [], "eraser": []}
 
 //With this we select the color of the palette
-function color(color_value){
-    ctx.strokeStyle = color_value;
-    ctx.fillStyle = color_value;
-}
+function changeColor() {
+    currentColor = this.value;
+  }
 
 //Function to change the background color of the canvas
 function changeBackgroundColor() {
@@ -34,6 +34,7 @@ function reduce_pixel(){
 }
 
 function fill(){
+    ctx.strokeStyle = currentColor;
     fill_value = true;
     stroke_value = false;
 }
@@ -79,6 +80,7 @@ function pencil (){
     }
 
     function draw(){
+        ctx.strokeStyle = currentColor;
         ctx.lineTo(curX, curY);
         ctx.stroke();
         canvas_data.pencil.push({"startX": prevX, "startY": prevY, "endX": curX, "endY": curY, "thick": ctx.lineWidth, "color": ctx.strokeStyle});
@@ -222,7 +224,7 @@ function eraser(){
         
     function draw(){
         ctx.lineTo(curX, curY);
-        ctx.strokeStyle = "#ffffff";
+        ctx.strokeStyle = currentColor;
         ctx.stroke();
         canvas_data.pencil.push({ "startx": prevX, "starty": prevY, "endx": curX, "endy": curY, "thick": ctx.lineWidth, "color": ctx.strokeStyle });
     }    
